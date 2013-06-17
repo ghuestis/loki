@@ -1,0 +1,9 @@
+server => localhost
+user => root
+pass => lorik667m8
+database => lowkitest
+table => testfile
+last_id => 100
+headers => owner_name, business_name, street
+nsalgs => nameswap, normalize, abbreviated_streets
+scalg => testfile_sc

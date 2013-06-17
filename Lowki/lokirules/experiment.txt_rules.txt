@@ -1,0 +1,9 @@
+server => db04
+user => data_reader
+pass => data_reader
+database => tx_raw
+table => hyperlocal_titles
+last_id => 155
+headers => address, manufacturer
+nsalgs => normalize, nameswap
+scalg => home_titles

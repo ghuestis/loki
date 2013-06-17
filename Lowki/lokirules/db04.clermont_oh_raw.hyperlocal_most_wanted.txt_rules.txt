@@ -1,0 +1,8 @@
+server => db04
+user => data_reader
+pass => data_reader
+database => clermont_oh_raw
+table => hyperlocal_most_wanted
+last_id => 0
+headers => name, last_address
+nsalgs => nameswap, normalize
