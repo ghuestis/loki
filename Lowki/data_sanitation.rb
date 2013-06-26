@@ -19,6 +19,26 @@ def cap_first(line)
 end
 
 $var_saints = '(Matthew|Maximilian|Bernardine|Peter|Martin|Benedict|Peregrine|Joseph|Monica|Venerable|Rose|Francis|Thomas|Catharine|Luke|Dominic|Sebastian|Raymond|Elizabeth|Nicholas|Louis|Cosmas|Ambrose|Gile|Lucas|Raphael|Wenceslaus|John|George|Agatha|Stephen|Nichola|Gabriel|Vincent|Robert|Charles|Aloysius|Maria|Jame|Isidore|Lawrence|Brigid|Ansgar|Apollonia|Jude|Rita|Giles|Polycarp|Patrick|Gregory|Augustine|Bridget|Catherine|Clare|Lucy|Andrew|Joan|Boniface|Agnes|Ann|Blessed|Teresa|Frances|Camillus|Martha|James|Jerome|Casimir|Anthony|Zita|Albert|Cecilia|Cyprian|Isaac|Mark|Scholastica|Mary|David|Stanislau|Georg|Ignatius|Basil|Casimi|Bede|Paschal|Cyril|Louise|Timothy|Alphonsus|Blaise|Josep|Philip|Gertrude)'	#This can be inserted as a disjunction into regex whenever we need to convert St. to Saint, or something similar.
+$array_test = ['one','two','three','four','five','six','seven','eight','nine','ten','eleven']
+$string_test = 'one|two|three|four|five|six|seven|eight|nine|ten|eleven'
+
+def sub_array(test)
+  p $array_test
+  p test
+  time1 = Time.now
+  100000.times do
+    $array_test.each {|thing| test.gsub!(/(#{thing})/, '\1')}
+  end
+  time1 = Time.now - time1
+  p "array: #{time1}"
+  time1 = Time.now
+  regex = Regexp.new(('('+$string_test+')' ), Regexp::IGNORECASE)
+  100000.times do    
+    test.gsub!(regex, '\1')
+  end
+  time1 = Time.now - time1
+  p "string: #{time1}"
+end
 
 #method corresponding to abbreviated streets
 def abbreviated_streets(street)

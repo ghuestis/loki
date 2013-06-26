@@ -1,0 +1,9 @@
+server => db05.blockshopper.com
+user => data_miner
+pass => data_miner
+database => vlad_storycreator
+table => vlad_sc_2b7b6019_2c93_f60f_aaf6_b93e40bca50f
+last_id => 0
+headers => defendant, reason_removed, date_sentenced
+nsalgs => nameswap, downcase, date_standardization
+scalg => 1466_sc
