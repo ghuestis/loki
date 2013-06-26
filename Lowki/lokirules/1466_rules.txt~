@@ -1,4 +1,4 @@
-server => db05.blockshopper.com
+server => db05
 user => data_miner
 pass => data_miner
 database => vlad_storycreator

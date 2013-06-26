@@ -44,4 +44,9 @@ def testfile_sc(nsalgs, quary)
   end
   return quary
 end
+
+def sc_1466(nsalgs, quary)
+  p nsalgs
+  p quary
+end
   
