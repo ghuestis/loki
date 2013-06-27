@@ -63,7 +63,7 @@ def loadloki (input)
   client = Mysql2::Client.new(:host => law.server, :username => law.user, :password => law.pass)
   client.query("USE #{law.database}")
   quary = client.query("SELECT * FROM #{law.table} WHERE id > #{law.last_id}")
-  if (law.scalg =~ /\;/)
+  if (law.scalg =~ /\;|system|\(|\)|drop/)
     abort("nice try, MacGuyver.")
   end
   nsalgs = Hash[ law.headers.zip(law.nsalgs) ]
