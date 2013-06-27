@@ -3,6 +3,12 @@ def home_titles(nsalgs, quary)
   p quary
   
   #if the additional variables are not used, there is effectively zero loss rate for passing additional information to NS
+  
+  #yup.  Hence why discarding context is completely unnecessary.  Variables are passed as references, which are basically just
+  #pointers to the memory location containing their data.  They're very light, and if there's a possibility they might be needed
+  #there's no reason not to send them along.  We can also load totally separate datasets as reference materials if they're needed,
+  #as long as we do it in the 'sc_algo' portion so it only gets loaded once.  I'll try to remember to put up an example of that
+  #tomorrow.  -G
   quary.each do |row|
     i = 0
     start = Time.now.to_i
