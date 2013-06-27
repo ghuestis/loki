@@ -51,8 +51,11 @@ def sub_array(test)
   p "string: #{time1}"
 end
 
-def date_standardization
-  
+def date_standardization (date)
+  #common formats
+  date.sub!(/(\d{4})(?:-|\/|\\| |\#)(\d{1,2})(?:-|\/|\\| |\#)(\d{1,2})/, '\1-\2-\3')
+  date.sub!(/(\d{1,2})(?:-|\/|\\| |\#)(\d{1,2})(?:-|\/|\\| |\#)(\d{4})/, '\3-\1-\2')
+  return date
 end
 
 #method corresponding to abbreviated_streets algo
