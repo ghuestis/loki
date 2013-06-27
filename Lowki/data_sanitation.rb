@@ -4,6 +4,12 @@ def normalize(value)
   return value
 end
 
+def downcase(value)
+  value.gsub!(/\b([A-Za-z\'\-]+)\b/){|m| m.downcase}
+  return value
+end
+
+
 def nameswap(value)
   #common formats
   value.sub!(/^\s*([A-Za-z\'\-]+)(?:, |\s{2,}|\t)([A-Za-z\'\-]+) ([A-Za-z\'\-]+)\s*$/, '\2 \3 \1')
