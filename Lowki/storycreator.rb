@@ -66,6 +66,7 @@ def sc_1466(nsalgs, quary)
         if (nsalgs[key] =~ /\;|system|\(|\)|drop/)
           abort("nice try, MacGuyver.")
         end
+        p nsalgs[key]
         p "#{nsalgs[key]} => #{key} => #{eval("#{nsalgs[key]}(#{value})")}"
       else
         p "#{key} = NOPE!"
