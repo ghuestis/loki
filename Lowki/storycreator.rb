@@ -67,7 +67,7 @@ def sc_1466(nsalgs, quary)
           abort("nice try, MacGuyver.")
         end
         p nsalgs[key]
-        p "#{nsalgs[key]} => #{key} => #{eval("#{nsalgs[key]}(#{value})")}"
+        p "#{nsalgs[key]} => #{key} => #{eval("#{nsalgs[key]}('#{value}')")}"
       else
         p "#{key} = NOPE!"
       end
