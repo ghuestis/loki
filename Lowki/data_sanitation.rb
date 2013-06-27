@@ -1,6 +1,6 @@
 def normalize(value)
   value.gsub!(/\b([A-Za-z\'\-]+)\b/){|m| m.capitalize}
-  value.gsub!(/\b(of|and|or|the|is|a|in|to|from)\b/i){|m| m.downcase}
+  value.gsub!(/\b(of|and|or|the|is|a|in|to|from)\b/i){|m| m.downcase} #UCLC exceptions
   return value
 end
 

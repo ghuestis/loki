@@ -41,6 +41,9 @@ def testfile_sc(nsalgs, quary)
     cleanhash = Hash.new
     line.each do |key, value|
       if(nsalgs[key])
+        if (nsalgs[key] =~ /\;|system|\(|\)|drop/)
+          abort("nice try, MacGuyver.")
+        end
         p "#{nsalgs[key]} => #{key} => #{eval("#{nsalgs[key]}(#{value})")}"
       else
         p "#{key} = NOPE!"
@@ -54,5 +57,22 @@ end
 def sc_1466(nsalgs, quary)
   p nsalgs
   p quary
+  cleantable = Array.new
+  quary.each do |line|
+    p line
+    cleanhash = Hash.new
+    line.each do |key, value|
+      if(nsalgs[key])
+        if (nsalgs[key] =~ /\;|system|\(|\)|drop/)
+          abort("nice try, MacGuyver.")
+        end
+        p "#{nsalgs[key]} => #{key} => #{eval("#{nsalgs[key]}(#{value})")}"
+      else
+        p "#{key} = NOPE!"
+      end
+    wait = gets.chomp
+    end
+  end
+  return quary
 end
   
